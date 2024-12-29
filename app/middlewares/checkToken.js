@@ -1,4 +1,4 @@
-import { JsonWebTokenError as jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 export function checkToken(req, res, next) {
   const authHeader = req.headers['authorization'];
