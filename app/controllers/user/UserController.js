@@ -1,7 +1,7 @@
-import { User } from "../../models/User.js";
+import { User } from "../../models/user/User.js";
 
 export class UserController {
-  async getUserById() {
+  async getUserById(req, res) {
     const id = req.params.id;
     
     const user = await User.findById(id, '-password');
