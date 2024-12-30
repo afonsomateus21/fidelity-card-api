@@ -24,4 +24,14 @@ export class CustomerController {
       res.status(500).json({ msg: err });
     }
   }
+
+  async getUserByPhoneNumber(req, res) {
+    const { email } = req.query;
+
+    const customer = await Customer.findOne({ email: email });
+
+    if (!customer) return res.status(404).json({ msg: 'Cliente não encontrado.' });
+
+    res.status(200).json({ customer });
+  }
 }
