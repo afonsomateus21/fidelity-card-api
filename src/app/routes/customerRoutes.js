@@ -6,5 +6,6 @@ const router = express.Router();
 const customerController = new CustomerController();
 
 router.post('/customers', checkToken, customerController.register);
+router.get('/customers', checkToken, customerController.getUserByPhoneNumber);
 
 export default router
