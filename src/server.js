@@ -4,6 +4,7 @@ import { connectDB } from './app/config/db.js';
 import authRoutes from './app/routes/authRoutes.js';
 import userRoutes from './app/routes/userRoutes.js';
 import customerRoutes from './app/routes/customerRoutes.js';
+import serviceRoutes from './app/routes/serviceRoutes.js';
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use('/api/auth/user', authRoutes);
 app.use('/api', userRoutes);
 
 app.use('/api', customerRoutes);
+
+app.use('/api', serviceRoutes);
 
 app.get('/api', (req, res) => {
   res.status(200).json({ msg: "bem vindo" })
