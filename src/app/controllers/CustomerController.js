@@ -25,7 +25,7 @@ export class CustomerController {
     }
   }
 
-  async getUserByPhoneNumber(req, res) {
+  async getUserByEmail(req, res) {
     const { email } = req.query;
 
     const customer = await Customer.findOne({ email: email });
